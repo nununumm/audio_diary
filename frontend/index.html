@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>音声日記</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Login -->
+  <section id="login-view" class="view hidden">
+    <div class="login-card">
+      <h1>音声日記</h1>
+      <p class="muted">パスワードを入力してください</p>
+      <input id="login-password" type="password" placeholder="パスワード" autocomplete="current-password" />
+      <button id="login-btn" class="primary">ログイン</button>
+      <p id="login-error" class="error hidden"></p>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <section id="app-view" class="view hidden">
+    <header class="topbar">
+      <h1>音声日記</h1>
+      <button id="logout-btn" class="link">ログアウト</button>
+    </header>
+
+    <div class="searchbar">
+      <input id="search-input" type="search" placeholder="日記を検索…" />
+    </div>
+
+    <main id="entry-list" class="entry-list"></main>
+
+    <div class="recorder">
+      <div id="record-status" class="record-status muted"></div>
+      <button id="record-btn" class="record-btn" aria-label="録音">
+        <span class="mic">●</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Entry detail modal -->
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <input id="detail-date" type="date" />
+        <button id="detail-close" class="link">閉じる</button>
+      </div>
+
+      <label class="field-label">日記本文（AI整形）</label>
+      <textarea id="detail-clean" rows="8"></textarea>
+
+      <details class="raw-details">
+        <summary>生の文字起こしを表示</summary>
+        <textarea id="detail-raw" rows="6"></textarea>
+      </details>
+
+      <label class="field-label">写真</label>
+      <div id="detail-photos" class="photo-grid"></div>
+      <label class="add-photo">
+        ＋ 写真を追加
+        <input id="photo-input" type="file" accept="image/*" hidden />
+      </label>
+
+      <div class="modal-actions">
+        <button id="detail-delete" class="danger">削除</button>
+        <button id="detail-save" class="primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

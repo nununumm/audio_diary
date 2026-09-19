@@ -1,0 +1,19 @@
+# Core web framework
+fastapi>=0.111
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic-settings>=2.2
+
+# Auth (signed session cookies)
+itsdangerous>=2.2
+
+# Image handling (thumbnails, EXIF orientation)
+pillow>=10.3
+
+# Google Gemini SDK (transcription + text cleanup)
+google-genai>=0.3
+
+# --- Optional ---
+# Only needed if DIARY_TRANSCRIBER=google_stt (Google Cloud Speech-to-Text).
+# Heavier install on ARM; leave commented unless you use it.
+# google-cloud-speech>=2.26
