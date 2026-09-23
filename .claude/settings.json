@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell($py = \"C:\\\\Users\\\\AMANUMA\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\"; Set-Location \"C:\\\\Users\\\\AMANUMA\\\\Project\\\\audio_diary\\\\backend\"; & $py -m venv .venv; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install --quiet --upgrade pip; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install --quiet fastapi \"uvicorn[standard]\" python-multipart pydantic-settings itsdangerous pillow httpx; if\\($?\\){ \"DEPS_OK\" }; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -c \"import fastapi, PIL, itsdangerous, pydantic_settings, multipart, httpx; print\\('IMPORTS_OK'\\)\")"
+      "PowerShell($py = \"C:\\\\Users\\\\AMANUMA\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\"; Set-Location \"C:\\\\Users\\\\AMANUMA\\\\Project\\\\audio_diary\\\\backend\"; & $py -m venv .venv; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install --quiet --upgrade pip; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install --quiet fastapi \"uvicorn[standard]\" python-multipart pydantic-settings itsdangerous pillow httpx; if\\($?\\){ \"DEPS_OK\" }; & \".\\\\.venv\\\\Scripts\\\\python.exe\" -c \"import fastapi, PIL, itsdangerous, pydantic_settings, multipart, httpx; print\\('IMPORTS_OK'\\)\")",
+      "Bash(git grep *)",
+      "Bash(echo \"===exit: $?===\")",
+      "Bash(gh repo *)"
     ]
   }
 }
